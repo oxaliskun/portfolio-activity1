@@ -359,43 +359,47 @@
         <span class="tag-important">Team · Not Lead</span>
       </div>
 
-      <!-- PROJECT 8: BMS — Contributor (now public, put last) -->
+      <!-- PROJECT 8: BMS — Blotter Management System · Contributor (now public, put last) -->
       <div class="card" style="padding:22px; display:grid; gap:14px; margin-bottom:16px">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
-          <h3>BMS — Borrow Management System · Contributor</h3>
+          <h3>BMS — Blotter Management System · Contributor</h3>
           <span class="tag-important">Team Project · Contributor · Public</span>
         </div>
         <div>
           <strong style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent)">Problem Statement</strong>
-          <p style="font-size:13px; margin-top:4px">Library borrowing was tracked manually, causing lost records and slow transactions. The team needed a system to manage students, books, and transactional history — I was not the main owner, but contributed to a teammate’s BMS project.</p>
+          <p style="font-size:13px; margin-top:4px">Barangay blotter records were managed manually, making it hard to track reports, hearings, and resolutions. The team needed a centralized API to manage blotter cases, officers, witnesses, suspects, and notifications — I was not the main owner, but contributed to a teammate’s Blotter Management System.</p>
         </div>
         <div>
           <strong style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent)">Technologies / Tools Used</strong>
           <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap">
             <span class="tag-important">TypeScript</span>
-            <span class="tag-important">PHP</span>
-            <span class="tag-important">MySQL / MySQLi</span>
-            <span class="tag-important">HTML/CSS</span>
-            <span class="tag-important">GitHub</span>
+            <span class="tag-important">Bun</span>
+            <span class="tag-important">Elysia.js</span>
+            <span class="tag-important">Drizzle ORM</span>
+            <span class="tag-important">Postgres (Neon)</span>
+            <span class="tag-important">Firebase FCM</span>
+            <span class="tag-important">Swagger</span>
+            <span class="tag-important">Docker</span>
           </div>
         </div>
         <div>
           <strong style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent)">Key Contributions (Contributor Role)</strong>
           <ul style="margin-top:6px; display:grid; gap:6px; font-size:13px; color:var(--text-muted); list-style:disc; padding-left:18px">
-            <li>Assisted with student_tbl / book_tbl / transactional_tbl JOIN queries (as contributor, not schema owner)</li>
-            <li>Helped implement CRUD operations for students/books under lead developer’s guidance</li>
-            <li>Contributed to randomized ID generation logic and collision checks</li>
-            <li>Supported testing and table views for borrowing history — main development led by teammate</li>
+            <li>Assisted with Elysia.js routes for reports, hearings, and evidence under lead developer’s guidance</li>
+            <li>Helped test auth and dashboard endpoints and Swagger docs at <code>/swagger</code></li>
+            <li>Contributed to Drizzle schema and seed data for Postgres/Neon setup</li>
+            <li>Supported FCM notifications and Docker/Render build scripts — main architecture led by teammate</li>
           </ul>
         </div>
         <div style="background: var(--bg); border:1px solid var(--border); border-radius:12px; padding:12px">
           <strong style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text)">Outcome & Impact</strong>
-          <p style="font-size:13px; margin-top:4px">Supported completion of a functional borrowing system with 3-table joins. Project is owned by a teammate — my role was supportive contribution, demonstrating teamwork and collaborative development. Now public at <code>github.com/dolfgwapo/BMS</code>.</p>
+          <p style="font-size:13px; margin-top:4px">Supported a working Blotter API (`blotter-api-elysia`) with 14+ routes (reports, officers, witnesses, suspects, hearings, resolutions, activityLogs) and Swagger at <code>/swagger</code>. Project owned by teammate — my role was supportive contribution, now public at <code>github.com/dolfgwapo/BMS</code> (Bun + Elysia).</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding-top:6px; border-top:1px solid var(--border)">
           <span style="font-size:12px; font-weight:700; color:var(--text-light)">Evidence:</span>
           <a href="https://github.com/dolfgwapo/BMS" target="_blank" class="btn btn-ghost" style="padding:8px 14px; font-size:13px">🔗 github.com/dolfgwapo/BMS</a>
-          <span class="tag-important" style="background:rgba(236,253,245,.9); border-color:rgba(167,243,208,.8); color:#065f46">Public · TypeScript</span>
+          <a href="https://github.com/dolfgwapo/BMS/blob/main/src/index.ts" target="_blank" class="btn btn-ghost" style="padding:8px 14px; font-size:13px">📄 src/index.ts</a>
+          <span class="tag-important" style="background:rgba(236,253,245,.9); border-color:rgba(167,243,208,.8); color:#065f46">Public · Elysia + Drizzle</span>
         </div>
       </div>
 

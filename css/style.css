@@ -49,7 +49,7 @@ body{
   overflow-x:hidden;
   position:relative;
 }
-/* Global tech background — more visible, still blurry transparent */
+/* Global tech background — fix white glitch on scroll */
 body::before{
   content:"";
   position:fixed;
@@ -61,6 +61,9 @@ body::before{
   opacity:0.72;
   z-index:-3;
   pointer-events:none;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 body::after{
   content:"";
@@ -71,6 +74,8 @@ body::after{
     radial-gradient(640px 380px at 92% 18%, rgba(79,70,229,0.05), transparent 62%);
   z-index:-2;
   pointer-events:none;
+  transform: translateZ(0);
+  will-change: transform;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -137,7 +142,7 @@ p{color: var(--text-muted); font-size:15px}
 }
 .btn-dark:hover{background: var(--primary-soft)}
 
-/* Nav — liquid glass */
+/* Nav — liquid glass — fix scroll glitch */
 .nav{
   position:sticky; top:0; z-index:50;
   backdrop-filter: blur(18px) saturate(170%);
@@ -145,6 +150,8 @@ p{color: var(--text-muted); font-size:15px}
   background: rgba(255,255,255,0.68);
   border-bottom:1px solid rgba(255,255,255,0.62);
   box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 8px 24px rgba(15,23,42,0.05);
+  transform: translateZ(0);
+  will-change: transform;
 }
 .nav-inner{
   height: var(--nav-h);
@@ -176,10 +183,11 @@ p{color: var(--text-muted); font-size:15px}
 .nav-cta{margin-left:8px; min-width:128px; justify-content:center; text-align:center; white-space:nowrap; flex:0 0 auto}
 .hamburger{display:none; width:40px;height:40px; border-radius:10px; border:1px solid var(--border); background: rgba(255,255,255,0.72); backdrop-filter: blur(10px); display:none; place-items:center; cursor:pointer}
 
-/* Hero — with tech1 background (ultra blurred, transparent) */
+/* Hero — with tech1 background (ultra blurred, transparent) — fix glitch */
 .hero{
   padding: 40px 0 32px;
   position:relative; overflow:hidden;
+  isolation: isolate;
 }
 .hero::before{
   content:"";
@@ -196,6 +204,8 @@ p{color: var(--text-muted); font-size:15px}
   filter: blur(14px) saturate(0.85) brightness(1.02);
   opacity:0.18;
   pointer-events:none; z-index:-1;
+  transform: translateZ(0);
+  will-change: transform;
 }
 .hero-grid{
   display:grid; grid-template-columns: 1.2fr .9fr; gap:40px; align-items:center;
@@ -282,33 +292,28 @@ p{color: var(--text-muted); font-size:15px}
 .section-head h2{line-height:1.1}
 .section-head p{max-width:620px}
 
-/* Tech backgrounds — more visible but still blurry transparent (minimal) */
+/* Tech backgrounds — fix white flash on scroll */
 .section.tech-bg-2::before,
-.section-sm.tech-bg-2::before{
-  content:"";
-  position:absolute; inset:0;
-  background: url('../assets/tech2.jpg') center 30% / cover no-repeat;
-  filter: blur(16px) saturate(0.85) brightness(1.03);
-  opacity:0.14;
-  pointer-events:none; z-index:-1;
-}
+.section-sm.tech-bg-2::before,
 .section.tech-bg-3::before,
-.skills-tech::before{
-  content:"";
-  position:absolute; inset:0;
-  background: url('../assets/tech3.jpg') center 40% / cover no-repeat;
-  filter: blur(16px) saturate(0.85) brightness(1.03);
-  opacity:0.13;
-  pointer-events:none; z-index:-1;
-}
+.skills-tech::before,
 .career-tech::before{
   content:"";
   position:absolute; inset:0;
-  background: url('../assets/tech4.jpg') center 35% / cover no-repeat;
   filter: blur(16px) saturate(0.85) brightness(1.03);
   opacity:0.13;
   pointer-events:none; z-index:-1;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
+.section.tech-bg-2::before,
+.section-sm.tech-bg-2::before{ background: url('../assets/tech2.jpg') center 30% / cover no-repeat; }
+.section.tech-bg-3::before,
+.skills-tech::before{ background: url('../assets/tech3.jpg') center 40% / cover no-repeat; }
+.career-tech::before{ background: url('../assets/tech4.jpg') center 35% / cover no-repeat; }
+.section.tech-bg-2::before,
+.section-sm.tech-bg-2::before{ opacity:0.14; }
 
 /* About */
 .about-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:start}
